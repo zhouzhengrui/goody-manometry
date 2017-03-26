@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <title>预约测压</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="icofont/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <!-- JS -->
+    <script type="text/javascript" src="js/system.js"></script>
+
+</head>
+
+
+<body onload="loaded()">
+    <!-- footer start -->
+    <footer class="navbar">
+        <a class="active" href="index.html">
+            <i class="icon-pen"></i>
+            <p>预约申请</p>
+        </a>
+        <a class="" href="history.html">
+            <i class="icon-document"></i>
+            <p>预约记录</p>
+        </a>
+    </footer>
+
+    <!-- footer over -->
+    <!-- main start -->
+    <div class="main main-gray">
+        <div class="scroller">
+            <div class="spacing"></div>
+            <!-- list start -->
+            <div class="list list-border">
+                <!-- item start -->
+                <div class="item">
+                    <div class="row">
+                        <label class="label">姓名</label>
+                        <div class="input">
+                            <input class="input" type="text" placeholder="请输入您的真实姓名">
+                        </div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <div class="row">
+                        <label class="label">手机</label>
+                        <div class="input">
+                            <input class="input" type="tel" placeholder="请输入您的手机号码">
+                        </div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <div class="row">
+                        <label class="label">预约时间</label>
+                        <div class="input">
+                            <input class="input date" type="datetime-local" placeholder="请选择预约日期和时间" onfocus="this.removeAttribute('placeholder')" onblur="if(this.value == '') this.setAttribute('placeholder','请选择预约日期和时间')">
+                        </div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item md-trigger" id="area-select" data-modal="modal-area">
+                    <div class="row">
+                        <label class="label">所在地区</label>
+                        <p class="gray align-left flex-1">请选择您所在地区</p>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <div class="row">
+                        <label class="label top-fixed">详细地址</label>
+                        <div class="input">
+                            <textarea class="textarea" rows="3" placeholder="请输入您预约的详细地址"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- item over -->
+            </div>
+            <!-- list over -->
+            <!-- explain start -->
+            <div class="explain align-center">
+                <!-- <p class="red">错误提示</p> -->
+            </div>
+            <!-- explain over -->
+            <!-- button start -->
+            <div class="button-group">
+                <button class="button button-block waves-effect waves-light" data-href="submit.html">
+                    <span class="button-inner">提交申请</span>
+                </button>
+            </div>
+            <!-- button over -->
+        </div>
+     </div>
+    <!-- main over -->
+
+    <!-- modal start -->
+    <div class="md-modal md-effect-stick-bottom" id="modal-area">
+        <div class="md-main">
+            <div class="area-title">
+                <button class="area-back" id="area-back"><i class="icon-back"></i></button>
+                <h3 class="title">选择地区</h3>
+                <button class="area-close md-close"><i class="icon-cancel"></i></button>
+            </div>
+            <div class="area-content bottom-modal-scroll" id="area-content">
+                <div class="scroller">
+                    <ul class="area-list" id="area-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="md-overlay"></div>
+    <!-- modal over -->
+
+    <!-- JavaScript start -->
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/iscroll/iscroll-probe.js"></script>
+    <script type="text/javascript" src="js/swiper/swiper.min.js"></script>
+    <script type="text/javascript" src="js/lazyload/jquery.lazyload.min.js"></script>
+    <!-- <script type="text/javascript" src="js/switchery/switchery.min.js"></script> -->
+    <script type="text/javascript" src="js/modalEffects/classie.js"></script>
+    <script type="text/javascript" src="js/modalEffects/modalEffects.js"></script>
+    <script type="text/javascript" src="js/waves/waves.min.js"></script>
+    <script type="text/javascript" src="js/photoSwipe/photoswipe.min.js"></script>
+    <script type="text/javascript" src="js/photoSwipe/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <!-- JavaScript over -->
+
+    <script type="text/javascript" src="js/area/jquery.area.js"></script>
+
+</body>
+
+</html>
