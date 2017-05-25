@@ -20,14 +20,14 @@
 <body onload="loaded()">
     <!-- footer start -->
     <footer class="navbar">
-        <a class="active" href="index.html">
+        <div class="item waves-effect active" data-href="index.html">
             <i class="icon-pen"></i>
             <p>预约申请</p>
-        </a>
-        <a class="" href="history.html">
+        </div>
+        <div class="item waves-effect " data-href="history.html">
             <i class="icon-document"></i>
             <p>预约记录</p>
-        </a>
+        </div>
     </footer>
 
     <!-- footer over -->
@@ -60,9 +60,19 @@
                 <!-- item start -->
                 <div class="item">
                     <div class="row">
+                        <label class="label">预约日期</label>
+                        <div class="input">
+                            <input class="input" type="text" id="mobiscroll-date" placeholder="请选择预约日期">
+                        </div>
+                    </div>
+                </div>
+                <!-- item over -->
+                <!-- item start -->
+                <div class="item">
+                    <div class="row">
                         <label class="label">预约时间</label>
                         <div class="input">
-                            <input class="input date" type="datetime-local" placeholder="请选择预约日期和时间" onfocus="this.removeAttribute('placeholder')" onblur="if(this.value == '') this.setAttribute('placeholder','请选择预约日期和时间')">
+                            <input class="input" type="text" id="mobiscroll-time" placeholder="请选择预约时间">
                         </div>
                     </div>
                 </div>
@@ -136,6 +146,41 @@
     <!-- JavaScript over -->
 
     <script type="text/javascript" src="js/area/jquery.area.js"></script>
+    <!-- date start -->
+    <script type="text/javascript" src="js/mobiscroll/mobiscroll.core.js"></script>
+    <script type="text/javascript" src="js/mobiscroll/mobiscroll.frame.js"></script>
+    <script type="text/javascript" src="js/mobiscroll/mobiscroll.scroller.js"></script>
+    <script type="text/javascript" src="js/mobiscroll/mobiscroll.util.datetime.js"></script>
+    <script type="text/javascript" src="js/mobiscroll/mobiscroll.datetimebase.js"></script>
+    <script type="text/javascript" src="js/mobiscroll/mobiscroll.datetime.js"></script>
+    <script type="text/javascript" src="js/mobiscroll/i18n/mobiscroll.i18n.zh.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('#mobiscroll-date').mobiscroll().date({
+                theme: 'ios',
+                mode: 'scroller',
+                display: 'bottom',
+                lang: 'zh',
+                rows: 5,
+                buttons: [
+                    'cancel',
+                    'set',
+                ]
+            });
+            $('#mobiscroll-time').mobiscroll().time({
+                theme: 'ios',
+                mode: 'scroller',
+                display: 'bottom',
+                lang: 'zh',
+                rows: 5,
+                buttons: [
+                    'cancel',
+                    'set',
+                ]
+            });
+        });
+    </script>
+    <!-- date over -->
 
 </body>
 

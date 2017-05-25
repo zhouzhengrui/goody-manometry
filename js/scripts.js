@@ -50,29 +50,18 @@ Waves.displayEffect();
 // delayed spik
 function delayedSpik() {
 
-    // var href = [];
-    // $("body").find("a.waves-effect").each(function(i) {
-    //     href[i] = $(this).attr("href");
-    //     $(this).attr("href", "javascript:;");
-    //     $(this).bind("tap", function() {
-    //         window.setTimeout(function() {
-    //             location.href = href[i];
-    //         }, 300);
-    //     });
-    // });
-
     var href = [];
 
     $("[data-href]").each(function(i) {
         href[i] = $(this).data('href');
         if ($(this).hasClass('waves-effect')) {
-            $(this).bind("tap", function() {
+            $(this).bind("click", function() {
                 window.setTimeout(function() {
                     location.href = href[i];
                 }, 300);
             });
         } else {
-            $(this).bind("tap", function() {
+            $(this).bind("click", function() {
                 location.href = href[i];
             });
         }
